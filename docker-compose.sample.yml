@@ -1,7 +1,7 @@
 web:
     build: ./docker/centos7-nginx
     ports:
-        - "80:80"
+        - "8080:80"
     volumes:
         - ".:/var/www"
     links:
@@ -27,7 +27,7 @@ php:
 #        - redis
 #        - mariadb
 
-redis: 
+redis:
     image: "centos/redis-32-centos7"
     ports:
         - "6379:6379"
@@ -35,8 +35,6 @@ redis:
 mariadb:
     image: "mariadb"
 
-    ports:
-        - "3306:3306"
     volumes:
         - "./docker/db:/docker-entrypoint-initdb.d"
         - "./docker/mysql:/var/lib/mysql"
@@ -44,4 +42,4 @@ mariadb:
         - MYSQL_ROOT_PASSWORD=root
         - MYSQL_DATABASE=wp
         - MYSQL_USER=root
-        - MYSQL_PASSWORD=
+        - MYSQL_PASSWORD=root

@@ -45,3 +45,5 @@ RUN chmod +x /docker-entrypoint.sh
 EXPOSE 9000
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
+
+CMD ["php-fpm", "--nodaemonize"]
