@@ -1,0 +1,6 @@
+docker-compose.yml
+/docker/mysql/*
+/docker/mysql/
+vendor
+/vendor
+.idea
